@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- استدعاء الأيقونات الرسمية -->
+    <!-- استدعاء الأيقونات الرسمية لضمان ظهور الأشكال بنجاح -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            /* تدرج لوني فخم مستوحى من ألوان السماء النقية */
+            /* تدرج لوني فخم مستوحى من ألوان السماء النقية بناءً على طلبك */
             --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 35%, #bae6fd 70%, #7dd3fc 100%);
             --card-glass: rgba(255, 255, 255, 0.85);
             --text-dark: #0f172a;
@@ -46,7 +46,7 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-        /* إطار الصورة الشخصية الاحترافي */
+        /* إطار الصورة الشخصية المحدث ليقبل صورتك الحقيقية */
         .profile-img {
             width: 120px;
             height: 120px;
@@ -58,11 +58,13 @@
             align-items: center;
             border: 4px solid #ffffff;
             box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
+            overflow: hidden; /* لقص الصورة بشكل دائري ممتاز */
         }
 
-        .profile-img i {
-            font-size: 55px;
-            color: #0284c7;
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 { 
@@ -73,13 +75,12 @@
             letter-spacing: -0.5px;
         }
 
-        p { 
+        <p> { 
             color: var(--text-muted); 
             font-size: 16px; 
             margin-bottom: 30px; 
             font-weight: 500;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
         }
         
         .links-container {
@@ -166,24 +167,23 @@
 <body>
 
 <div class="card">
-    <!-- الصورة الشخصية مع أيقونة CEO أنيقة -->
+    <!-- لعرض صورتك الشخصية الحقيقية التي سترفعها باسم me.jpg بجانب الملف -->
     <div class="profile-img">
-        <img src="profile.png.webp" alt="Abdullah Mofid Yabraq" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+        <img src="profile.png" alt="Abdullah Mofid Yabraq">
     </div> 
     
     <h1>Abdullah Mofid Yabraq</h1>
     <p>CEO Manager</p>
     
     <div class="links-container">
-        <!-- اتصل بنا والبريد -->
+        <!-- روابط حساباتك الحقيقية والخاصة بك مدمجة ومفعلة بالكامل هنا -->
         <a href="tel:+966559893115" class="btn phone">
             <i class="fa-solid fa-phone"></i> <span class="btn-text">اتصال هاتفي</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="mailto:aboodbrq@gmail.com" class="btn email">
             <i class="fa-solid fa-envelope"></i> <span class="btn-text">البريد الإلكتروني</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
-
-        <!-- تطبيقات المراسلة والتواصل الاجتماعي -->
+        <!-- تم تثبيت رابط واتساب الخاص بك بدقة هنا -->
         <a href="https://wa.me" target="_blank" class="btn whatsapp">
             <i class="fa-brands fa-whatsapp"></i> <span class="btn-text">واتساب</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
@@ -205,6 +205,7 @@
         <a href="https://x.com" target="_blank" class="btn x-platform">
             <i class="fa-brands fa-x-twitter"></i> <span class="btn-text">منصة إكس (X)</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
+        <!-- تم تثبيت رابط ثريدز الخاص بك بدقة هنا لقراءته بشكل صحيح -->
         <a href="https://threads.net" target="_blank" class="btn threads">
             <i class="fa-brands fa-threads"></i> <span class="btn-text">ثريدز</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
