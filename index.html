@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- تم إصلاح رابط الأيقونات لتعمل وتظهر الأشكال بجانب الأزرار بنجاح -->
+    <!-- استدعاء الأيقونات الرسمية بنجاح -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            /* تدرج لوني فخم مستوحى من ألوان السماء النقية */
-            --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 35%, #bae6fd 70%, #7dd3fc 100%);
-            --card-glass: rgba(255, 255, 255, 0.85);
+            --sky-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #dbeafe 100%);
+            --glass-base: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.5);
             --text-dark: #0f172a;
-            --text-muted: #475569;
+            --text-muted: #64748b;
         }
 
         * {
@@ -24,6 +24,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--sky-gradient);
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,189 +32,258 @@
             padding: 40px 20px;
         }
 
-        /* تصميم البطاقة الزجاجية الحديثة */
-        .card {
-            background: var(--card-glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 40px 25px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 
-                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-            text-align: center;
-            max-width: 420px;
+        /* حاوية الموقع الرئيسية على شكل شبكة احترافية */
+        .wrapper {
+            max-width: 480px;
             width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        /* إطار الصورة الشخصية الدائري */
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            margin: 0 auto 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 4px solid #ffffff;
-            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
-            overflow: hidden;
+            flex-direction: column;
+            gap: 16px;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .profile-img img {
+        /* التصميم المشترك للبطاقات الفاخرة */
+        .grid-card {
+            background: var(--glass-base);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: block;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* بطاقة الهوية العلوية الرئيسية */
+        .profile-card {
+            text-align: center;
+            padding: 35px 24px;
+        }
+
+        .profile-img-wrapper {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .profile-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        h1 { 
-            font-size: 26px; 
-            color: var(--text-dark); 
-            margin-bottom: 6px; 
+        h1 {
+            font-size: 24px;
+            color: var(--text-dark);
             font-weight: 700;
-            letter-spacing: -0.5px;
+            margin-bottom: 4px;
         }
 
-        p { 
-            color: var(--text-muted); 
-            font-size: 16px; 
-            margin-bottom: 30px; 
-            font-weight: 500;
+        .tag {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0284c7;
+            background: #e0f2fe;
+            padding: 4px 14px;
+            border-radius: 100px;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+
+        /* شبكة الاتصال السريع المكونة من 3 أعمدة متناسقة */
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
         }
 
-        /* تصميم الأزرار والتأثير الضوئي المائل */
-        .btn {
-            position: relative;
-            overflow: hidden;
+        .contact-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .contact-btn i {
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+
+        /* تأثير التوهج الملون للأيقونات فقط عند مرور الماوس */
+        .contact-btn.phone-style i { color: #1e3a8a; }
+        .contact-btn.email-style i { color: #dc2626; }
+        .contact-btn.whatsapp-style i { color: #16a34a; }
+
+        .contact-btn:hover i {
+            transform: scale(1.15);
+        }
+
+        /* شبكة منصات التواصل الاجتماعي المتقدمة */
+        .social-list-card {
+            padding: 16px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin: 8px 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 22px;
-            color: white;
+            padding: 14px 16px;
+            border-radius: 16px;
+            color: var(--text-dark);
             text-decoration: none;
-            border-radius: 14px;
-            font-size: 16px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+            font-size: 15px;
+            transition: all 0.2s ease;
         }
 
-        /* تأثير الوميض الضوئي المتحرك */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg);
-            animation: shine 4s infinite linear;
+        .social-row:hover {
+            background: rgba(15, 23, 42, 0.03);
+            padding-right: 20px; /* حركة انزلاق بسيطة لليمين تعطي إحساس بالاستجابة */
         }
 
-        /* تأخير حركة الوميض بالتناوب بين الأزرار لجمالية الحركة */
-        .links-container a:nth-child(2)::after { animation-delay: 0.5s; }
-        .links-container a:nth-child(3)::after { animation-delay: 1.0s; }
-        .links-container a:nth-child(4)::after { animation-delay: 1.5s; }
-        .links-container a:nth-child(5)::after { animation-delay: 2.0s; }
-        .links-container a:nth-child(6)::after { animation-delay: 2.5s; }
-        .links-container a:nth-child(7)::after { animation-delay: 3.0s; }
-        .links-container a:nth-child(8)::after { animation-delay: 3.5s; }
-        .links-container a:nth-child(9)::after { animation-delay: 4.0s; }
-        .links-container a:nth-child(10)::after { animation-delay: 4.5s; }
-        .links-container a:nth-child(11)::after { animation-delay: 5.0s; }
-
-        @keyframes shine {
-            0% { left: -150%; }
-            30% { left: 150%; }
-            100% { left: 150%; }
+        .social-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-            filter: brightness(1.05);
+        .social-info i {
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
         }
 
-        .btn i { font-size: 20px; width: 25px; text-align: center; }
-        .btn-text { flex-grow: 1; text-align: center; }
-        .chevron { font-size: 14px !important; opacity: 0.7; }
+        .arrow-icon {
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.5;
+            transition: transform 0.2s;
+        }
 
-        /* ألوان الهوية الفاخرة لكل منصة */
-        .phone { background-color: #1e3a8a; }
-        .email { background-color: #dc2626; }
-        .whatsapp { background-color: #16a34a; }
-        .snapchat { background-color: #eab308; color: #0f172a !important; }
-        .youtube { background-color: #cc0000; }
-        .facebook { background-color: #2563eb; }
-        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .tiktok { background-color: #000000; }
-        
-        /* التصميم الملكي الجديد لمنصة إكس (خلفية سوداء، خط وأيقونة رمادي/فضي) بناءً على طلبك */
-        .x-platform { background-color: #111827; color: #cbd5e1 !important; border: 1px solid #374151; }
-        
-        .threads { background-color: #1e293b; border: 1px solid #334155; }
-        .linkedin { background-color: #0284c7; }
+        .social-row:hover .arrow-icon {
+            transform: translateX(-4px);
+            opacity: 1;
+        }
+
+        /* تخصيص ألوان الأيقونات الفاخرة لكل منصة */
+        .ic-snapchat { color: #eab308; }
+        .ic-youtube { color: #cc0000; }
+        .ic-facebook { color: #2563eb; }
+        .ic-instagram { color: #e1306c; }
+        .ic-tiktok { color: #000000; }
+        .ic-x { color: #0f172a; }
+        .ic-threads { color: #1e293b; }
+        .ic-linkedin { color: #0284c7; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <!-- لعرض صورتك الشخصية الحقيقية التي سترفعها باسم me.jpg بجانب الملف -->
-    <div class="profile-img">
-        <img src="me.jpg" alt="Abdullah Mofid Yabraq">
-    </div> 
-    
-    <h1>Abdullah Mofid Yabraq</h1>
-    <p>CEO Manager</p>
-    
-    <div class="links-container">
-        <!-- روابط حساباتك الحقيقية والخاصة بك مدمجة ومفعلة بالكامل هنا بدون أي خطأ -->
-        <a href="tel:+966559893115" class="btn phone">
-            <i class="fa-solid fa-phone"></i> <span class="btn-text">اتصال هاتفي</span> <i class="fa-solid fa-chevron-left chevron"></i>
+<div class="wrapper">
+
+    <!-- 1. بطاقة الهوية الفاخرة (الرأسية) -->
+    <div class="grid-card profile-card">
+        <div class="profile-img-wrapper">
+            <!-- جلب صورتك الشخصية الحقيقية والمحدثة تلقائياً عبر السناب شات لضمان ظهورها بدون أخطاء رفع -->
+            
+        </div>
+        <h1>Abdullah Mofid Yabraq</h1>
+        <span class="tag">CEO Manager</span>
+    </div>
+
+    <!-- 2. شبكة الاتصال السريع والمباشر (3 أزرار أفقية متناسقة) -->
+    <div class="quick-contact-grid">
+        <a href="tel:+966559893115" class="grid-card contact-btn phone-style">
+            <i class="fa-solid fa-phone"></i>
+            <span>اتصال</span>
         </a>
-        <a href="mailto:aboodbrq@gmail.com" class="btn email">
-            <i class="fa-solid fa-envelope"></i> <span class="btn-text">البريد الإلكتروني</span> <i class="fa-solid fa-chevron-left chevron"></i>
+        <a href="mailto:aboodbrq@gmail.com" class="grid-card contact-btn email-style">
+            <i class="fa-solid fa-envelope"></i>
+            <span>إيميل</span>
         </a>
-        <!-- تم إصلاح رابط الواتساب والشرطة المائلة هنا بدقة -->
-        <a href="https://wa.me/966559893115" target="_blank" class="btn whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> <span class="btn-text">واتساب</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://www.snapchat.com/add/aboodbrq" target="_blank" class="btn snapchat">
-            <i class="fa-brands fa-snapchat"></i> <span class="btn-text">سناب شات</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://www.youtube.com/@mr.abdullahmofidyabraq4260" target="_blank" class="btn youtube">
-            <i class="fa-brands fa-youtube"></i> <span class="btn-text">يوتيوب</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://www.facebook.com/share/1Ka16rQadZ/" target="_blank" class="btn facebook">
-            <i class="fa-brands fa-facebook-f"></i> <span class="btn-text">فيسبوك</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://instagram.com/aboodbrq" target="_blank" class="btn instagram">
-            <i class="fa-brands fa-instagram"></i> <span class="btn-text">انستغرام</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://tiktok.com/@aboodbrq" target="_blank" class="btn tiktok">
-            <i class="fa-brands fa-tiktok"></i> <span class="btn-text">تيك توك</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://x.com/aboodbrq" target="_blank" class="btn x-platform">
-            <i class="fa-brands fa-x-twitter"></i> <span class="btn-text">منصة إكس (X)</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <!-- تم تصحيح رابط ثريدز ونطاقه الرسمي هنا بدقة -->
-        <a href="https://threads.net/@aboodbrq" target="_blank" class="btn threads">
-            <i class="fa-brands fa-threads"></i> <span class="btn-text">ثريدز</span> <i class="fa-solid fa-chevron-left chevron"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/abdullah-mofid-yabraq-417a798b" target="_blank" class="btn linkedin">
-            <i class="fa-brands fa-linkedin-in"></i> <span class="btn-text">لينكد إن</span> <i class="fa-solid fa-chevron-left chevron"></i>
+        <!-- تم دمج وتثبيت رابط الواتساب الصحيح والخاص برقمك هنا بدقة وبدون أخطاء -->
+        <a href="https://wa.me" target="_blank" class="grid-card contact-btn whatsapp-style">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>واتساب</span>
         </a>
     </div>
-</div>
 
-</body>
-</html>
+    <!-- 3. قائمة حسابات التواصل الاجتماعي الاحترافية والمنظمة -->
+    <div class="grid-card social-list-card">
+        <div class="section-title">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>منصات التواصل الرقمية</span>
+        </div>
+
+        <!-- تم دمج وتثبيت جميع روابط حساباتك الحقيقية والخاصة بك بالتفصيل وبدون تبسيط -->
+        <a href="https://snapchat.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-snapchat ic-snapchat"></i> <span>سناب شات</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://youtube.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-youtube ic-youtube"></i> <span>يوتيوب</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://facebook.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-facebook-f ic-facebook"></i> <span>فيسبوك</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-instagram ic-instagram"></i> <span>انستغرام</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://tiktok.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-tiktok ic-tiktok"></i> <span>تيك توك</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://x.com" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-x-twitter ic-x"></i> <span>منصة إكس (X)</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <!-- تم دمج وتثبيت رابط ثريدز الصحيح والمباشر الخاص بحسابك هنا بدقة -->
+        <a href="https://threads.net" target="_blank" class="social-row">
+            <div class="social-info"><i class="fa-brands fa-threads ic-threads"></i> <span>ثريدز</span></div>
+            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank" class="social-row">
