@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- استدعاء خط رسمي وتجهيز الأيقونات المدمجة المضمونة -->
+    <!-- استدعاء خط رسمي وتجهيز الأيقونات المضمونة للعمل على جيت هب -->
     <link rel="stylesheet" href="https://jsdelivr.net">
     <style>
         :root {
@@ -20,35 +20,48 @@
             display: flex; justify-content: center; align-items: center;
             min-height: 100vh; padding: 30px 20px;
         }
-        .wrapper { max-width: 420px; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+        .wrapper { max-width: 400px; width: 100%; display: flex; flex-direction: column; gap: 14px; }
         .grid-card {
             background: var(--glass-base); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 20px; padding: 16px;
+            border: 1px solid var(--glass-border); border-radius: 20px; padding: 20px;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); transition: all 0.3s ease;
         }
         .profile-card { text-align: center; padding: 25px 20px; }
         .profile-img-wrapper {
-            width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 12px;
+            width: 105px; height: 105px; border-radius: 50%; margin: 0 auto 12px;
             border: 4px solid #ffffff; box-shadow: 0 8px 16px rgba(0,0,0,0.05); overflow: hidden; background: #e2e8f0;
         }
         .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        h1 { font-size: 20px; color: var(--text-dark); font-weight: 700; }
-        .job-card { text-align: center; padding: 10px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
-        .all-links-card { padding: 12px 10px; display: flex; flex-direction: column; gap: 8px; }
+        h1 { font-size: 21px; color: var(--text-dark); font-weight: 700; }
+        .job-card { text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
         
-        /* تعديل التموضع لتقريب الأيقونة والسهم وتوسيطهما معاً */
-        .social-row { 
-            display: flex; align-items: center; justify-content: center; 
-            gap: 25px; padding: 10px 14px; border-radius: 12px; text-decoration: none; 
+        /* تحويل المستطيل الأخير لشبكة ذكية متراصة لتفادي الفراغات الكبيرة */
+        .all-links-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 16px; 
+            padding: 24px; 
+            justify-items: center;
         }
-        .social-row:hover { background: rgba(255, 255, 255, 0.9); transform: scale(1.03); }
-        .app-icon-wrapper { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: #ffffff; box-shadow: 0 4px 8px rgba(0,0,0,0.02); transition: transform 0.3s; }
-        .app-icon-wrapper i { font-size: 20px; }
-        .social-row:hover .app-icon-wrapper { transform: scale(1.1) rotate(5deg); }
-        .arrow-icon { font-size: 14px; color: #64748b; opacity: 0.4; transition: all 0.3s; }
-        .social-row:hover .arrow-icon { transform: translateX(-4px); opacity: 1; }
         
-        /* ألوان الهوية للمنصات */
+        /* تصميم الأزرار المربعة التفاعلية الفخمة */
+        .social-box { 
+            display: flex; align-items: center; justify-content: center; 
+            width: 54px; height: 54px; border-radius: 14px; background: #ffffff; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .social-box i { font-size: 24px; }
+        
+        /* تأثيرات الحركة والطفو الاحترافية عند تمرير الماوس */
+        .social-box:hover { 
+            transform: translateY(-5px) scale(1.08); 
+            box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08);
+            background: #ffffff;
+        }
+        
+        /* الألوان الرسمية للمنصات */
         .ic-phone { color: #1e3a8a; } .ic-email { color: #dc2626; } .ic-whatsapp { color: #16a34a; }
         .ic-snapchat { color: #eab308; } .ic-youtube { color: #cc0000; } .ic-facebook { color: #2563eb; }
         .ic-instagram { color: #e1306c; } .ic-tiktok { color: #000000; } .ic-x { color: #0f172a; }
@@ -59,7 +72,7 @@
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول -->
+    <!-- المستطيل الأول: الصورة والاسم -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
             <img src="me.jpg" alt="Abdullah Mofid Yabraq">
@@ -67,55 +80,22 @@
         <h1>Abdullah Mofid Yabraq</h1>
     </div>
 
-    <!-- المستطيل الثاني -->
+    <!-- المستطيل الثاني: المسمى الوظيفي -->
     <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث الشامل والمقرب هندسياً لجميع المنصات -->
-    <div class="grid-card all-links-card">
-        <a href="tel:+966559893115" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-telephone-fill ic-phone"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="mailto:aboodbrq@gmail.com" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-envelope-fill ic-email"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://wa.me" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-whatsapp ic-whatsapp"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://snapchat.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-snapchat ic-snapchat"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-youtube ic-youtube"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://facebook.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-facebook ic-facebook"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-instagram ic-instagram"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://tiktok.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-tiktok ic-tiktok"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://x.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-twitter-x ic-x"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://threads.net" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-threads ic-threads"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="bi bi-linkedin ic-linkedin"></i></div>
-            <i class="bi bi-chevron-left arrow-icon"></i>
-        </a>
+    <!-- المستطيل الثالث: شبكة المنصات الذكية الملمومة بدون فراغات زائدة -->
+    <div class="grid-card all-links-grid">
+        <a href="tel:+966559893115" class="social-box"><i class="bi bi-telephone-fill ic-phone"></i></a>
+        <a href="mailto:aboodbrq@gmail.com" class="social-box"><i class="bi bi-envelope-fill ic-email"></i></a>
+        <a href="https://wa.me" target="_blank" class="social-box"><i class="bi bi-whatsapp ic-whatsapp"></i></a>
+        <a href="https://snapchat.com" target="_blank" class="social-box"><i class="bi bi-snapchat ic-snapchat"></i></a>
+        <a href="https://youtube.com" target="_blank" class="social-box"><i class="bi bi-youtube ic-youtube"></i></a>
+        <a href="https://facebook.com" target="_blank" class="social-row social-box"><i class="bi bi-facebook ic-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-box"><i class="bi bi-instagram ic-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" class="social-box"><i class="bi bi-tiktok ic-tiktok"></i></a>
+        <a href="https://x.com" target="_blank" class="social-box"><i class="bi bi-twitter-x ic-x"></i></a>
+        <a href="https://threads.net" target="_blank" class="social-box"><i class="bi bi-threads ic-threads"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="social-box"><i class="bi bi-linkedin ic-linkedin"></i></a>
     </div>
 
 </div>
