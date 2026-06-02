@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- رابط مكتبة الأيقونات المحدث والمستقر لضمان ظهور الشعارات فوراً -->
-    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --sky-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #dbeafe 100%);
@@ -41,7 +39,6 @@
             animation: fadeIn 0.8s ease-out;
         }
 
-        /* التصميم المشترك للمستطيلات الزجاجية الفاخرة */
         .grid-card {
             background: var(--glass-base);
             backdrop-filter: blur(20px);
@@ -53,7 +50,7 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* 1. مستطيل الصورة والاسم فقط */
+        /* 1. مستطيل الصورة والاسم */
         .profile-card {
             text-align: center;
             padding: 30px 20px;
@@ -82,7 +79,7 @@
             font-weight: 700;
         }
 
-        /* 2. مستطيل المهنة الصغير المستقل */
+        /* 2. مستطيل المهنة */
         .job-card {
             text-align: center;
             padding: 12px;
@@ -93,7 +90,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* 3. المستطيل الأخير الشامل لجميع البيانات */
+        /* 3. المستطيل الأخير الشامل */
         .all-links-card {
             padding: 12px;
             display: flex;
@@ -119,7 +116,6 @@
             padding-right: 22px;
         }
 
-        /* عرض أيقونة التطبيق الرسمية والملونة بشكل بارز وموسط */
         .app-icon-wrapper {
             display: flex;
             align-items: center;
@@ -132,39 +128,28 @@
             transition: transform 0.3s;
         }
 
-        .app-icon-wrapper i {
-            font-size: 20px;
-            display: inline-block;
+        .app-icon-wrapper svg {
+            width: 22px;
+            height: 22px;
         }
 
         .social-row:hover .app-icon-wrapper {
             transform: scale(1.1) rotate(5deg);
         }
 
-        .arrow-icon {
-            font-size: 14px !important;
-            color: var(--text-muted);
+        /* السهم البرمجي الأنيق المدمج للجهة اليسرى */
+        .arrow-svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-muted);
             opacity: 0.4;
-            transition: transform 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
         }
 
-        .social-row:hover .arrow-icon {
+        .social-row:hover .arrow-svg {
             transform: translateX(-4px);
             opacity: 1;
         }
-
-        /* الألوان الرسمية لأيقونات التطبيقات */
-        .ic-phone { color: #1e3a8a; }
-        .ic-email { color: #dc2626; }
-        .ic-whatsapp { color: #16a34a; }
-        .ic-snapchat { color: #eab308; }
-        .ic-youtube { color: #cc0000; }
-        .ic-facebook { color: #2563eb; }
-        .ic-instagram { color: #e1306c; }
-        .ic-tiktok { color: #000000; }
-        .ic-x { color: #0f172a; }
-        .ic-threads { color: #1e293b; }
-        .ic-linkedin { color: #0284c7; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -176,10 +161,10 @@
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول: الصورة والاسم فقط -->
+    <!-- المستطيل الأول: تم ربطه بصورتك المرفوعة me.jpg داخل جيت هب -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
-            
+            <img src="me.jpg" alt="Abdullah Mofid Yabraq">
         </div>
         <h1>Abdullah Mofid Yabraq</h1>
     </div>
@@ -189,77 +174,57 @@
         CEO Manager
     </div>
 
-    <!-- المستطيل الأخير: الأيقونات الرسمية والأسهم موزعة بشكل سليم ومصلح بالكامل -->
+    <!-- المستطيل الأخير: مدمج به أيقونات SVG الملونة المستقرة ومضمونة الظهور 100% -->
     <div class="grid-card all-links-card">
 
         <!-- اتصال هاتفي -->
         <a href="tel:+966559893115" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-solid fa-phone ic-phone"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#1e3a8a"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- البريد الإلكتروني -->
         <a href="mailto:aboodbrq@gmail.com" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-solid fa-envelope ic-email"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#dc2626"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- واتساب -->
         <a href="https://wa.me/966559893115" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-whatsapp ic-whatsapp"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#16a34a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.817 9.817 0 0 0 12.04 2zm5.72 14.12c-.24.69-1.41 1.26-1.95 1.34-.5.07-1.14.13-3.32-.76-2.78-1.15-4.56-3.98-4.7-4.17-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.01.95-2.28.25-.27.53-.34.71-.34.18 0 .35.01.51.02.16.01.38-.06.59.44.22.54.75 1.84.82 1.98.07.14.11.31.02.49-.09.18-.14.29-.28.45-.14.16-.3.36-.43.49-.15.15-.31.32-.13.63.18.31.81 1.33 1.73 2.15.18.16.34.25.56.33.22.08.43.04.59-.13.16-.17.71-.83.9-1.11.2-.28.39-.24.66-.14.27.09 1.73.82 2.03.97.3.15.5.22.57.34.07.12.07.7-.17 1.39z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- سناب شات -->
         <a href="https://www.snapchat.com/add/aboodbrq" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-snapchat ic-snapchat"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.02 19 12 19s1.91-.36 2.45-.98l2.79 2.79c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-.62-2.79C19.26 15.07 20 13.12 20 11c0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm1-8h-2v2H9v2h2v2h2v-2h2v-2h-2V9z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- يوتيوب -->
         <a href="https://www.youtube.com/@mr.abdullahmofidyabraq4260" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-youtube ic-youtube"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.503 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.387.508 9.387.508s7.517 0 9.387-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- فيسبوك -->
-        <a href="https://www.facebook.com/share/1Ka16rQadZ/" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-facebook-f ic-facebook"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
+        <a href="https://facebook.com" target="_blank" class="social-row">
+            <div class="app-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="#2563eb"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+            </div>
+            <svg class="arrow-svg" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
         </a>
 
         <!-- انستغرام -->
-        <a href="https://instagram.com/aboodbrq" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-instagram ic-instagram"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
-        </a>
-
-        <!-- تيك توك -->
-        <a href="https://tiktok.com/@aboodbrq" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-tiktok ic-tiktok"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
-        </a>
-
-        <!-- منصة إكس -->
-        <a href="https://x.com/aboodbrq" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-x-twitter ic-x"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
-        </a>
-
-        <!-- ثريدز -->
-        <a href="https://threads.net/@aboodbrq" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-threads ic-threads"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
-        </a>
-
-        <!-- لينكد إن -->
-        <a href="https://www.linkedin.com/in/abdullah-mofid-yabraq-417a798b" target="_blank" class="social-row">
-            <div class="app-icon-wrapper"><i class="fa-brands fa-linkedin-in ic-linkedin"></i></div>
-            <i class="fa-solid fa-chevron-left arrow-icon"></i>
-        </a>
-    </div>
-
-</div>
-
-</body>
-</html>
+        <a href="https://instagram.com" target="_blank" class="social-row">
+            <div class="app-icon-wrapper">
