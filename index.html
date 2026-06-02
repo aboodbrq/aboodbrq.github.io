@@ -3,150 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Mofid Yabraq - Digital Card</title>
-    <!-- استدعاء الأيقونات -->
+    <title>Abdullah Mofid Yabraq - CEO Manager</title>
+    <!-- استدعاء الأيقونات الرسمية -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            /* تم تغيير الخلفية هنا إلى لون السماء الهادئ */
-            --bg-color: #e0f2fe; 
-            --card-bg: #ffffff;
-            --text-main: #1f2937;
-            --text-sub: #4b5563;
+            /* تدرج لوني فخم مستوحى من ألوان السماء النقية */
+            --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 35%, #bae6fd 70%, #7dd3fc 100%);
+            --card-glass: rgba(255, 255, 255, 0.85);
+            --text-dark: #0f172a;
+            --text-muted: #475569;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
+            background: var(--sky-gradient);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
+
+        /* تصميم البطاقة الزجاجية الحديثة */
         .card {
-            background: var(--card-bg);
-            padding: 30px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            background: var(--card-glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px 25px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
+
+        /* إطار الصورة الشخصية الاحترافي */
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            background: #e5e7eb;
-            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            margin: 0 auto 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 3px solid #0284c7; /* لون متناسق مع خلفية السماء */
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
         }
+
         .profile-img i {
-            font-size: 50px;
-            color: #9ca3af;
+            font-size: 55px;
+            color: #0284c7;
         }
-        h1 { font-size: 24px; color: var(--text-main); margin-bottom: 8px; }
-        p { color: var(--text-sub); font-size: 15px; margin-bottom: 25px; }
+
+        h1 { 
+            font-size: 26px; 
+            color: var(--text-dark); 
+            margin-bottom: 6px; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p { 
+            color: var(--text-muted); 
+            font-size: 16px; 
+            margin-bottom: 30px; 
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
         
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
+
+        /* تصميم الأزرار والتأثير الضوئي المائل */
         .btn {
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 20px;
+            padding: 15px 22px;
             color: white;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 16px;
-            font-weight: bold;
-            transition: transform 0.2s, filter 0.2s;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(0.9);
-        }
-        .btn i {
-            font-size: 20px;
-        }
-        .btn-text {
-            flex-grow: 1;
-            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
         }
 
-        /* ألوان المنصات */
-        .phone { background-color: #2b3990; }
-        .email { background-color: #ea4335; }
-        .whatsapp { background-color: #25d366; }
-        .snapchat { background-color: #fffc00; color: #000 !important; }
-        .youtube { background-color: #ff0000; }
-        .facebook { background-color: #1877f2; }
+        /* تأثير الوميض الضوئي المتحرك */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shine 4s infinite linear;
+        }
+
+        /* تأخير حركة الوميض بالتناوب بين الأزرار لجمالية الحركة */
+        .links-container a:nth-child(2)::after { animation-delay: 0.5s; }
+        .links-container a:nth-child(3)::after { animation-delay: 1.0s; }
+        .links-container a:nth-child(4)::after { animation-delay: 1.5s; }
+        .links-container a:nth-child(5)::after { animation-delay: 2.0s; }
+        .links-container a:nth-child(6)::after { animation-delay: 2.5s; }
+        .links-container a:nth-child(7)::after { animation-delay: 3.0s; }
+        .links-container a:nth-child(8)::after { animation-delay: 3.5s; }
+        .links-container a:nth-child(9)::after { animation-delay: 4.0s; }
+        .links-container a:nth-child(10)::after { animation-delay: 4.5s; }
+        .links-container a:nth-child(11)::after { animation-delay: 5.0s; }
+
+        @keyframes shine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            filter: brightness(1.05);
+        }
+
+        .btn i { font-size: 20px; width: 25px; text-align: center; }
+        .btn-text { flex-grow: 1; text-align: center; }
+        .chevron { font-size: 14px !important; opacity: 0.7; }
+
+        /* ألوان الهوية الفاخرة لكل منصة */
+        .phone { background-color: #1e3a8a; }
+        .email { background-color: #dc2626; }
+        .whatsapp { background-color: #16a34a; }
+        .snapchat { background-color: #eab308; color: #0f172a !important; }
+        .youtube { background-color: #cc0000; }
+        .facebook { background-color: #2563eb; }
         .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .tiktok { background-color: #000000; }
         
-        /* زر منصة إكس تم تعديل لون الخط والأيقونة الداخلي إلى الأسود وجعل الخلفية رمادية فاتحة ليتضح النص الأسود */
-        .x-platform { background-color: #f3f4f6; color: #000000 !important; border: 1px solid #d1d5db; }
+        /* التصميم الملكي الجديد لمنصة إكس بناءً على طلبك */
+        .x-platform { background-color: #111827; color: #cbd5e1 !important; border: 1px solid #374151; }
         
-        .threads { background-color: #000000; border: 1px solid #333; }
-        .linkedin { background-color: #0077b5; }
+        .threads { background-color: #1e293b; border: 1px solid #334155; }
+        .linkedin { background-color: #0284c7; }
     </style>
 </head>
 <body>
 
 <div class="card">
+    <!-- الصورة الشخصية مع أيقونة CEO أنيقة -->
     <div class="profile-img">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user-tie"></i>
     </div> 
     
     <h1>Abdullah Mofid Yabraq</h1>
     <p>CEO Manager</p>
     
     <div class="links-container">
-        <!-- اتصالات مباشر -->
+        <!-- اتصل بنا والبريد -->
         <a href="tel:+966559893115" class="btn phone">
-            <i class="fa-solid fa-phone"></i> <span class="btn-text">اتصال هاتفي</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-phone"></i> <span class="btn-text">اتصال هاتفي</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="mailto:aboodbrq@gmail.com" class="btn email">
-            <i class="fa-solid fa-envelope"></i> <span class="btn-text">البريد الإلكتروني</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-envelope"></i> <span class="btn-text">البريد الإلكتروني</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
 
-        <!-- شبكات التواصل الاجتماعي -->
+        <!-- تطبيقات المراسلة والتواصل الاجتماعي -->
         <a href="https://wa.me" target="_blank" class="btn whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> <span class="btn-text">واتساب</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-whatsapp"></i> <span class="btn-text">واتساب</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://snapchat.com" target="_blank" class="btn snapchat">
-            <i class="fa-brands fa-snapchat"></i> <span class="btn-text">سناب شات</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-snapchat"></i> <span class="btn-text">سناب شات</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://youtube.com" target="_blank" class="btn youtube">
-            <i class="fa-brands fa-youtube"></i> <span class="btn-text">يوتيوب</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-youtube"></i> <span class="btn-text">يوتيوب</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://facebook.com" target="_blank" class="btn facebook">
-            <i class="fa-brands fa-facebook-f"></i> <span class="btn-text">فيسبوك</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-facebook-f"></i> <span class="btn-text">فيسبوك</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://instagram.com" target="_blank" class="btn instagram">
-            <i class="fa-brands fa-instagram"></i> <span class="btn-text">انستغرام</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-instagram"></i> <span class="btn-text">انستغرام</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://tiktok.com" target="_blank" class="btn tiktok">
-            <i class="fa-brands fa-tiktok"></i> <span class="btn-text">تيك توك</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-tiktok"></i> <span class="btn-text">تيك توك</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://x.com" target="_blank" class="btn x-platform">
-            <i class="fa-brands fa-x-twitter"></i> <span class="btn-text">منصة إكس (X)</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-x-twitter"></i> <span class="btn-text">منصة إكس (X)</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://threads.net" target="_blank" class="btn threads">
-            <i class="fa-brands fa-threads"></i> <span class="btn-text">ثريدز</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-threads"></i> <span class="btn-text">ثريدز</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
         <a href="https://linkedin.com" target="_blank" class="btn linkedin">
-            <i class="fa-brands fa-linkedin-in"></i> <span class="btn-text">لينكد إن</span> <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-brands fa-linkedin-in"></i> <span class="btn-text">لينكد إن</span> <i class="fa-solid fa-chevron-left chevron"></i>
         </a>
     </div>
 </div>
