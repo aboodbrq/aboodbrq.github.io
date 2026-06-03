@@ -7,8 +7,8 @@
     <style>
         :root {
             --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
-            --glass-base: rgba(255, 255, 255, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-base: rgba(255, 255, 255, 0.82);
+            --glass-border: rgba(255, 255, 255, 0.5);
             --text-dark: #0f172a;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,42 +21,48 @@
         .wrapper { max-width: 400px; width: 100%; display: flex; flex-direction: column; gap: 14px; }
         .grid-card {
             background: var(--glass-base); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 24px; padding: 20px;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04); transition: all 0.3s ease;
+            border: 1px solid var(--glass-border); border-radius: 20px; padding: 20px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); transition: all 0.3s ease;
         }
-        .profile-card { text-align: center; padding: 30px 20px; }
+        .profile-card { text-align: center; padding: 25px 20px; }
         .profile-img-wrapper {
-            width: 105px; height: 105px; border-radius: 50%; margin: 0 auto 16px;
-            border: 4px solid #ffffff; box-shadow: 0 8px 16px rgba(0,0,0,0.06); overflow: hidden; background: #e2e8f0;
+            width: 105px; height: 105px; border-radius: 50%; margin: 0 auto 12px;
+            border: 4px solid #ffffff; box-shadow: 0 8px 16px rgba(0,0,0,0.05); overflow: hidden; background: #e2e8f0;
         }
         .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        h1 { font-size: 22px; color: var(--text-dark); font-weight: 700; }
-        .job-card { 
-            text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; 
-            background: rgba(224, 242, 254, 0.6); border: 1px solid rgba(255,255,255,0.4);
-        }
+        h1 { font-size: 21px; color: var(--text-dark); font-weight: 700; }
+        .job-card { text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
         .all-links-grid { 
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px; justify-items: center;
         }
         .social-box { 
             display: flex; align-items: center; justify-content: center; 
-            width: 56px; height: 56px; border-radius: 14px; background: #ffffff; 
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03); text-decoration: none;
+            width: 54px; height: 54px; border-radius: 14px; background: #ffffff; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(15, 23, 42, 0.04); overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.8);
         }
-        .social-box svg { width: 28px; height: 28px; display: block; }
-        .social-box:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08); background: #ffffff; }
+        .social-box svg { width: 26px; height: 26px; display: block; }
+        .social-box:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08); }
         
-        /* تضخيم وتكبير حجم شبح السناب شات برمجياً ليمتد بكامل حجم المربع الموحد وبدون مسافات مكسورة */
-        .snap-icon { width: 34px !important; height: 34px !important; }
+        /* كود هندسة شبح السناب شات الفاخر الموزون والمكبر ليتطابق بصرياً 100% مع جيرانه وبخلفية بيضاء نظيفة وحواف ناعمة */
+        .snap-ghost-shape {
+            width: 26px; height: 26px; background: #fffc00; position: relative;
+            border-radius: 50% 50% 35% 35%; border: 1.5px solid #0f172a; margin-top: -2px;
+        }
+        .snap-ghost-shape::before, .snap-ghost-shape::after {
+            content: ''; position: absolute; background: #fffc00; width: 8px; height: 8px;
+            border: 1.5px solid #0f172a; border-radius: 50%; bottom: 1px;
+        }
+        .snap-ghost-shape::before { left: -5px; clip-path: inset(0 0 0 1px); }
+        .snap-ghost-shape::after { right: -5px; clip-path: inset(0 1px 0 0); }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول: الصورة الشخصية والاسم -->
+    <!-- المستطيل الأول -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
             <img src="me.jpg" alt="Abdullah Mofid Yabraq">
@@ -64,65 +70,52 @@
         <h1>Abdullah Mofid Yabraq</h1>
     </div>
 
-    <!-- المستطيل الثاني: المهنة -->
+    <!-- المستطيل الثاني -->
     <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث الشامل -->
+    <!-- المستطيل الثالث الشامل المصلح والمحاذاة الفاخرة لجميع المنصات -->
     <div class="grid-card all-links-grid">
-        
-        <!-- 1. هاتف -->
-        <a href="tel:+966559893115" class="social-box">
-            <svg viewBox="0 0 24 24" fill="#1e3a8a"><path d="M20.01 15.38c-1.23-.13-2.42-.33-3.57-.7l-2.61 2.61c-2.92-1.48-5.3-3.86-6.78-6.78l2.61-2.61c-.37-1.15-.57-2.34-.7-3.57H3.03c-.02.13-.03.26-.03.4 0 9.39 7.61 17 17 17 .14 0 .27-.01.4-.03v-6.33z"/></svg>
+        <!-- سناب شات المطور: الشبح الأصفر الأنيق بحجم ممتاز ومحاذاة قياسية خالية من العيون واللسان داخل المربع الأبيض النظيف -->
+        <a href="https://snapchat.com" target="_blank" class="social-box">
+            <div class="snap-ghost-shape"></div>
         </a>
-
-        <!-- 2. إيميل -->
-        <a href="mailto:aboodbrq@gmail.com" class="social-box">
-            <svg viewBox="0 0 24 24" fill="#dc2626"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-
-        <!-- 3. واتساب -->
+        <!-- واتساب -->
         <a href="https://wa.me" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#16a34a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.817 9.817 0 0 0 12.04 2zm5.79 13.1c-.24.68-1.4 1.23-1.93 1.29-.48.06-.97.11-3.08-.73-2.7-1.07-4.42-3.83-4.55-4-.14-.18-1.1-1.47-1.1-2.81 0-1.34.7-1.99.95-2.26.24-.26.54-.33.72-.33.18 0 .36.01.52.02.16.01.38-.06.59.45.22.52.75 1.83.82 1.96.07.13.11.29.02.47-.08.18-.13.29-.26.44-.13.15-.28.34-.4.49-.13.15-.26.31-.11.57.15.26.66 1.09 1.42 1.76.98.86 1.81 1.13 2.07 1.26.26.13.41.11.57-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.26.13.44.2.5.31.07.11.07.64-.17 1.32z"/></svg>
         </a>
-        
-        <!-- 4. سناب شات المصلح والنهائي: تم إزالة هوامش الانكماش وتكبير الأيقونة للضعف لتملأ المربع وتتطابق مع حجم الواتساب تماماً وبأعلى فخامة -->
-        <a href="https://snapchat.com" target="_blank" class="social-box">
-            <svg class="snap-icon" viewBox="0 0 24 24">
-                <path fill="#fffc00" stroke="#10172a" stroke-width="1.3" stroke-linejoin="round" d="M12 2.5c2.4 0 4.1 1.6 4.1 4.1 0 .5-.1 1.1-.3 1.6.9.2 1.6.8 1.6 1.9 0 .9-.6 1.4-1.2 1.6.1.3.2.6.2.9 0 2.2-2.1 3.4-4.4 3.4s-4.4-1.2-4.4-3.4c0-.3.1-.6.2-.9-.6-.2-1.2-.7-1.2-1.6 0-1.1.7-1.7 1.6-1.9-.2-.5-.3-1.1-.3-1.6 0-2.5 1.7-4.1 4.1-4.1z"/>
-            </svg>
+        <!-- إيميل -->
+        <a href="mailto:aboodbrq@gmail.com" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#dc2626"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
-        
-        <!-- 5. يوتيوب -->
+        <!-- هاتف -->
+        <a href="tel:+966559893115" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#1e3a8a"><path d="M20.01 15.38c-1.23-.13-2.42-.33-3.57-.7l-2.61 2.61c-2.92-1.48-5.3-3.86-6.78-6.78l2.61-2.61c-.37-1.15-.57-2.34-.7-3.57H3.03c-.02.13-.03.26-.03.4 0 9.39 7.61 17 17 17 .14 0 .27-.01.4-.03v-6.33z"/></svg>
+        </a>
+        <!-- يوتيوب -->
         <a href="https://youtube.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.503 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.387.508 9.387.508s7.517 0 9.387-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
-        
-        <!-- 6. فيسبوك -->
+        <!-- فيسبوك -->
         <a href="https://facebook.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#2563eb"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-
-        <!-- 7. انستغرام -->
+        <!-- انستغرام -->
         <a href="https://instagram.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#e1306c"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         </a>
-        
-        <!-- 8. تيك توك -->
+        <!-- تيك توك -->
         <a href="https://tiktok.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31.01 2.61-.01 3.91.02.08 1.53.63 3.03 1.6 4.19 1.14.73 2.46 1.11 3.81 1.16v3.91c-1.53-.08-3.03-.64-4.19-1.6-.05 1.77-.01 3.54-.02 5.31-.05 4.74-4.75 8.16-9.35 6.94-3.55-.94-5.69-4.81-4.63-8.29.98-3.23 4.14-5.18 7.37-4.34.01 1.43-.01 2.86 0 4.28-1.74-.43-3.58.46-4.1 2.16-.62 2.02.93 4.12 3.03 4.09 2.15-.03 3.65-2.22 3.37-4.34-.02-4.46.01-8.91-.01-13.37z"/></svg>
         </a>
-        
-        <!-- 9. منصة إكس -->
+        <!-- منصة إكس -->
         <a href="https://x.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#0f172a"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-
-        <!-- 10. ثريدز -->
+        <!-- ثريدز -->
         <a href="https://threads.net" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#1e293b"><path d="M12 24c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm0-22c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zm2.703 13.918c-.808.577-1.785.882-2.703.882-2.653 0-4.715-1.921-4.715-4.757 0-2.846 2.052-4.773 4.715-4.773 2.457 0 4.444 1.706 4.636 4.1h-1.895c-.173-1.393-1.319-2.327-2.741-2.327-1.583 0-2.825 1.151-2.825 3 0 1.839 1.242 2.982 2.825 2.982.529 0 1.077-.168 1.488-.461v-1.636h-1.488v-1.727h3.388v4.912h-.35z"/></svg>
         </a>
-        
-        <!-- 11. لينكد إن -->
+        <!-- لينكد إن -->
         <a href="https://linkedin.com" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#0284c7"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9H7.12v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7h-3.56V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/></svg>
         </a>
@@ -132,4 +125,3 @@
 
 </body>
 </html>
- 
