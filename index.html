@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- صورة الموقع -->
-    <link rel="icon" type="image/png" href="me.jpg">
+    <link rel="icon" type="image/png" href="RAW_LINK_HERE">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -111,11 +111,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             background: rgba(255, 255, 255, 0.55);
             border: 1px solid rgba(255,255,255,0.4);
             backdrop-filter: blur(8px);
+
             transition: 0.2s ease;
             cursor: pointer;
+
+            /* إزالة الخطوط نهائياً */
+            text-decoration: none !important;
+        }
+
+        /* إزالة الخطوط من كل الحالات */
+        .icon-item,
+        .icon-item i,
+        .icon-item:link,
+        .icon-item:visited,
+        .icon-item:hover,
+        .icon-item:active {
+            text-decoration: none !important;
+        }
+
+        .icon-item i {
+            font-size: 22px;
         }
 
         /* حركة عند تمرير الماوس */
@@ -123,10 +142,6 @@
             transform: translateY(-6px) scale(1.07);
             background: rgba(255, 255, 255, 0.75);
             box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-        }
-
-        .icon-item i {
-            font-size: 22px;
         }
 
         /* ألوان الأيقونات */
@@ -152,7 +167,7 @@
             font-size: 15px;
             font-weight: 600;
             display: inline-block;
-            text-decoration: none;
+            text-decoration: none !important;
             transition: 0.2s ease;
         }
 
@@ -170,6 +185,8 @@
             width: 120px;
             border-radius: 12px;
         }
+
+        a { text-decoration: none !important; color: inherit; }
 
     </style>
 </head>
