@@ -5,24 +5,45 @@
     <title>Abdullah Mofid Yabraq</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- صورة الموقع (favicon) -->
-    <link rel="icon" type="image/png" href="RAW_LINK_HERE">
+    <!-- صورة الموقع -->
+    <link rel="icon" type="image/png" href="me.jpg">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+
+        /* خلفية السماء الهادئة */
         body {
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
-
-            /* خلفية السماء الهادئة */
             background: linear-gradient(to bottom, #cfe9ff, #e8f4ff, #f6fbff);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(to bottom, #1e2a38, #243447, #2f3e4e);
+            }
+            .box {
+                background: rgba(255,255,255,0.08);
+                border: 1px solid rgba(255,255,255,0.15);
+            }
+            .name, .title-badge {
+                color: #fff;
+            }
+        }
+
+        /* حركة دخول */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .container {
@@ -34,13 +55,14 @@
 
         /* مستطيلات شفافة */
         .box {
-            background: rgba(255, 255, 255, 0.55); /* شفافية */
-            backdrop-filter: blur(10px); /* تأثير زجاجي */
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(10px);
             padding: 22px;
             border-radius: 18px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             text-align: center;
             border: 1px solid rgba(255,255,255,0.4);
+            animation: fadeIn 1.2s ease;
         }
 
         .avatar {
@@ -89,24 +111,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            /* خلفية شفافة */
             background: rgba(255, 255, 255, 0.55);
             border: 1px solid rgba(255,255,255,0.4);
             backdrop-filter: blur(8px);
-
-            transition: 0.15s ease;
+            transition: 0.2s ease;
             cursor: pointer;
+        }
+
+        /* حركة عند تمرير الماوس */
+        .icon-item:hover {
+            transform: translateY(-6px) scale(1.07);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
 
         .icon-item i {
             font-size: 22px;
-        }
-
-        .icon-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-            background: rgba(255, 255, 255, 0.75);
         }
 
         /* ألوان الأيقونات */
@@ -122,7 +142,35 @@
         .threads i { color: #000000; }
         .linkedin i { color: #0A66C2; }
 
-        a { text-decoration: none; }
+        /* زر حفظ جهة الاتصال */
+        .vcf-btn {
+            margin-top: 18px;
+            padding: 10px 18px;
+            background: #007bff;
+            color: white;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            display: inline-block;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .vcf-btn:hover {
+            background: #005fcc;
+            transform: scale(1.05);
+        }
+
+        /* QR Code */
+        .qr-box {
+            margin-top: 18px;
+        }
+
+        .qr-box img {
+            width: 120px;
+            border-radius: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -132,7 +180,7 @@
     <!-- المستطيل الأول -->
     <div class="box">
         <div class="avatar">
-            <img src="RAW_LINK_HERE" alt="Abdullah">
+            <img src="me.jpg" alt="Abdullah">
         </div>
         <div class="name">Abdullah Mofid Yabraq</div>
     </div>
@@ -146,51 +194,60 @@
     <div class="box">
         <div class="icons-grid">
 
-            <a class="icon-item phone" href="tel:+9665XXXXXXXX">
+            <a class="icon-item phone" href="tel:+966559893115">
                 <i class="fa-solid fa-phone"></i>
             </a>
 
-            <a class="icon-item email" href="mailto:example@email.com">
+            <a class="icon-item email" href="mailto:aboodbrq@gmail.com">
                 <i class="fas fa-envelope"></i>
             </a>
 
-            <a class="icon-item whatsapp" href="https://wa.me/9665XXXXXXXX" target="_blank">
+            <a class="icon-item whatsapp" href="https://wa.me/966559893115" target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
 
-            <a class="icon-item snapchat" href="https://www.snapchat.com/add/USERNAME" target="_blank">
+            <a class="icon-item snapchat" href="https://www.snapchat.com/add/aboodbrq" target="_blank">
                 <i class="fab fa-snapchat-ghost"></i>
             </a>
 
-            <a class="icon-item youtube" href="https://www.youtube.com/@USERNAME" target="_blank">
+            <a class="icon-item youtube" href="https://www.youtube.com/@mr.abdullahmofidyabraq4260" target="_blank">
                 <i class="fab fa-youtube"></i>
             </a>
 
-            <a class="icon-item facebook" href="https://www.facebook.com/USERNAME" target="_blank">
+            <a class="icon-item facebook" href="https://www.facebook.com/share/1Ka16rQadZ/" target="_blank">
                 <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a class="icon-item instagram" href="https://www.instagram.com/USERNAME" target="_blank">
+            <a class="icon-item instagram" href="https://www.instagram.com/aboodbrq" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a class="icon-item tiktok" href="https://www.tiktok.com/@USERNAME" target="_blank">
+            <a class="icon-item tiktok" href="https://www.tiktok.com/@aboodbrq" target="_blank">
                 <i class="fab fa-tiktok"></i>
             </a>
 
-            <a class="icon-item x-twitter" href="https://x.com/USERNAME" target="_blank">
+            <a class="icon-item x-twitter" href="https://x.com/aboodbrq" target="_blank">
                 <i class="fab fa-x-twitter"></i>
             </a>
 
-            <a class="icon-item threads" href="https://www.threads.net/@USERNAME" target="_blank">
+            <a class="icon-item threads" href="https://www.threads.net/@aboodbrq" target="_blank">
                 <i class="fa-brands fa-threads"></i>
             </a>
 
-            <a class="icon-item linkedin" href="https://www.linkedin.com/in/USERNAME" target="_blank">
+            <a class="icon-item linkedin" href="https://www.linkedin.com/in/abdullah-mofid-yabraq-417a798b" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
             </a>
 
         </div>
+
+        <!-- زر حفظ جهة الاتصال -->
+        <a class="vcf-btn" href="contact.vcf" download>Save Contact</a>
+
+        <!-- QR Code -->
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://aboodbrq.github.io/">
+        </div>
+
     </div>
 
 </div>
