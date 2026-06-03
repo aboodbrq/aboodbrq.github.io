@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
+    <!-- الرابط الرسمي والمؤمن 100% للأيقونات القياسية لضمان ظهور الشعارات الحقيقية فوراً -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
     <style>
         :root {
             --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
-            --glass-base: rgba(255, 255, 255, 0.85);
+            --glass-base: rgba(255, 255, 255, 0.82);
             --glass-border: rgba(255, 255, 255, 0.5);
             --text-dark: #0f172a;
         }
@@ -40,65 +42,26 @@
             width: 54px; height: 54px; border-radius: 14px; background: #ffffff; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255,255,255,0.8); position: relative;
+            border: 1px solid rgba(255,255,255,0.8);
         }
+        .social-box i { font-size: 24px; display: block; }
         .social-box:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08); }
         
-        /* الأيقونات البرمجية المدمجة الفاخرة والمستقرة والمصلحة 100% */
-        .icon { width: 24px; height: 24px; position: relative; display: block; }
+        /* ألوان الهوية الرسمية الفخمة للأيقونات القياسية الحقيقية */
+        .ic-phone { color: #1e3a8a; } .ic-email { color: #dc2626; } .ic-whatsapp { color: #16a34a; }
+        .ic-youtube { color: #cc0000; } .ic-facebook { color: #2563eb; } .ic-instagram { color: #e1306c; }
+        .ic-tiktok { color: #000000; } .ic-x { color: #0f172a; } .ic-threads { color: #1e293b; } .ic-linkedin { color: #0284c7; }
         
-        /* 1. هاتف */
-        .ic-phone { background: #1e3a8a; border-radius: 50%; width: 20px; height: 20px; }
-        .ic-phone::after { content: ''; position: absolute; width: 8px; height: 12px; border: 3px solid white; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; top: 3px; left: 6px; transform: rotate(-45deg); }
-        
-        /* 2. بريد */
-        .ic-email { background: #dc2626; border-radius: 4px; width: 22px; height: 16px; margin-top: 4px; }
-        .ic-email::after { content: ''; position: absolute; width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; border-top: 8px solid white; top: 0; left: 0; }
-        
-        /* 3. واتساب */
-        .ic-whatsapp { background: #16a34a; border-radius: 50%; width: 22px; height: 22px; }
-        .ic-whatsapp::after { content: ''; position: absolute; width: 10px; height: 10px; border: 2.5px solid white; border-width: 0 2.5px 2.5px 0; border-radius: 0 0 3px 0; top: 5px; left: 6px; transform: rotate(-45deg); }
-        
-        /* 4. سناب شات المطور الرسمي القياسي الفاخر والمضمون للأبد بجمالية انسيابية دقيقة */
+        /* تلوين مربع السناب شات باللون الأصفر الرسمي المعتمد وجعل الشبح الداخلي باللون الأبيض الفخم مع تحديد واضح */
         .snap-box { background-color: #fffc00 !important; border: 1px solid #eab308; }
-        .ic-snapchat { background: #ffffff; border-radius: 50% 50% 40% 40%; width: 16px; height: 18px; margin-top: 1px; border: 1.5px solid #000000; position: relative; }
-        .ic-snapchat::before { content: ''; position: absolute; background: #ffffff; border-radius: 50%; width: 6px; height: 6px; border: 1.5px solid #000000; left: -5px; bottom: 1px; }
-        .ic-snapchat::after { content: ''; position: absolute; background: #ffffff; border-radius: 50%; width: 6px; height: 6px; border: 1.5px solid #000000; right: -5px; bottom: 1px; }
-        
-        /* 5. يوتيوب */
-        .ic-youtube { background: #cc0000; border-radius: 6px; width: 24px; height: 16px; margin-top: 4px; }
-        .ic-youtube::after { content: ''; position: absolute; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 7px solid white; top: 4px; left: 9px; }
-        
-        /* 6. فيسبوك */
-        .ic-facebook { background: #2563eb; border-radius: 50%; width: 22px; height: 22px; }
-        .ic-facebook::after { content: 'f'; position: absolute; color: white; font-family: sans-serif; font-weight: bold; font-size: 18px; top: 0px; left: 7px; }
-        
-        /* 7. انستغرام */
-        .ic-instagram { border: 2.5px solid #e1306c; border-radius: 7px; width: 22px; height: 22px; }
-        .ic-instagram::after { content: ''; position: absolute; width: 6px; height: 6px; border: 2.5px solid #e1306c; border-radius: 50%; top: 5px; left: 5px; }
-        
-        /* 8. تيك توك */
-        .ic-tiktok { background: #000000; border-radius: 50%; width: 22px; height: 22px; }
-        .ic-tiktok::after { content: 'd'; position: absolute; color: white; font-family: sans-serif; font-size: 16px; font-weight: bold; top: -1px; left: 7px; }
-        
-        /* 9. منصة إكس */
-        .ic-x { background: #0f172a; width: 22px; height: 22px; border-radius: 4px; }
-        .ic-x::after { content: 'X'; position: absolute; color: white; font-family: sans-serif; font-weight: 800; font-size: 15px; top: 1px; left: 5px; }
-        
-        /* 10. ثريدز */
-        .ic-threads { background: #1e293b; border-radius: 50%; width: 22px; height: 22px; }
-        .ic-threads::after { content: '@'; position: absolute; color: white; font-family: sans-serif; font-weight: bold; font-size: 14px; top: 1px; left: 4px; }
-        
-        /* 11. لينكد إن */
-        .ic-linkedin { background: #0284c7; border-radius: 4px; width: 22px; height: 22px; }
-        .ic-linkedin::after { content: 'in'; position: absolute; color: white; font-family: sans-serif; font-weight: bold; font-size: 14px; top: 1px; left: 4px; }
+        .ic-snapchat { color: #ffffff !important; filter: drop-shadow(1px 0px 0px #000) drop-shadow(-1px 0px 0px #000) drop-shadow(0px 1px 0px #000) drop-shadow(0px -1px 0px #000); }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول: الصورة والاسم -->
+    <!-- المستطيل الأول: صورتك والاسم -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
             <img src="me.jpg" alt="Abdullah Mofid Yabraq">
@@ -107,34 +70,24 @@
     </div>
 
     <!-- المستطيل الثاني: المهنة -->
-    <div class="grid-card job-card">
-        CEO Manager
-    </div>
+    <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث: شبكة التطبيقات البرمجية المضمونة 100% -->
+    <!-- المستطيل الثالث الشامل بالأيقونات الرسمية الحقيقية والمصلحة 100% -->
     <div class="grid-card all-links-grid">
-        <!-- هاتف -->
-        <a href="tel:+966559893115" class="social-box"><div class="icon ic-phone"></div></a>
-        <!-- إيميل -->
-        <a href="mailto:aboodbrq@gmail.com" class="social-box"><div class="icon ic-email"></div></a>
-        <!-- واتساب -->
-        <a href="https://wa.me" target="_blank" class="social-box"><div class="icon ic-whatsapp"></div></a>
-        <!-- سناب شات المطور القياسي بالشبح الحقيقي الأنيق والخلفية الصفراء المعتمدة -->
-        <a href="https://snapchat.com" target="_blank" class="social-box snap-btn snap-box"><div class="ic-snapchat"></div></a>
-        <!-- يوتيوب -->
-        <a href="https://youtube.com" target="_blank" class="social-box"><div class="icon ic-youtube"></div></a>
-        <!-- فيسبوك -->
-        <a href="https://facebook.com" target="_blank" class="social-box"><div class="icon ic-facebook"></div></a>
-        <!-- انستغرام -->
-        <a href="https://instagram.com" target="_blank" class="social-box"><div class="icon ic-instagram"></div></a>
-        <!-- تيك توك -->
-        <a href="https://tiktok.com" target="_blank" class="social-box"><div class="icon ic-tiktok"></div></a>
-        <!-- منصة إكس -->
-        <a href="https://x.com" target="_blank" class="social-box"><div class="icon ic-x"></div></a>
-        <!-- ثريدز -->
-        <a href="https://threads.net" target="_blank" class="social-box"><div class="icon ic-threads"></div></a>
-        <!-- لينكد إن -->
-        <a href="https://linkedin.com" target="_blank" class="social-box"><div class="icon ic-linkedin"></div></a>
+        <a href="tel:+966559893115" class="social-box"><i class="bi bi-telephone-fill ic-phone"></i></a>
+        <a href="mailto:aboodbrq@gmail.com" class="social-box"><i class="bi bi-envelope-fill ic-email"></i></a>
+        <a href="https://wa.me" target="_blank" class="social-box"><i class="bi bi-whatsapp ic-whatsapp"></i></a>
+        
+        <!-- أيقونة شبح السناب شات الأصلي الفاخر متناسق ومضمون الحجم بالألوان القياسية -->
+        <a href="https://snapchat.com" target="_blank" class="social-box snap-box"><i class="bi bi-snapchat ic-snapchat"></i></a>
+        
+        <a href="https://youtube.com" target="_blank" class="social-box"><i class="bi bi-youtube ic-youtube"></i></a>
+        <a href="https://facebook.com" target="_blank" class="social-box"><i class="bi bi-facebook ic-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-box"><i class="bi bi-instagram ic-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" class="social-box"><i class="bi bi-tiktok ic-tiktok"></i></a>
+        <a href="https://x.com" target="_blank" class="social-box"><i class="bi bi-twitter-x ic-x"></i></a>
+        <a href="https://threads.net" target="_blank" class="social-box"><i class="bi bi-threads ic-threads"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="social-box"><i class="bi bi-linkedin ic-linkedin"></i></a>
     </div>
 
 </div>
