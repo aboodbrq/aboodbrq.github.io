@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- استدعاء حزمة الأيقونات الرسمية المعتمدة لضمان ظهور الشبح الأصلي الفاخر -->
-    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
@@ -34,6 +32,7 @@
         .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
         h1 { font-size: 21px; color: var(--text-dark); font-weight: 700; }
         .job-card { text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
+        
         .all-links-grid { 
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px; justify-items: center;
         }
@@ -43,33 +42,18 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255,255,255,0.8);
+            overflow: hidden;
         }
-        .social-box i { font-size: 24px; display: block; }
+        /* تنسيق موحد لحجم وثبات جميع الأيقونات المجلوبة من الخادم الدائم */
+        .social-box img { width: 26px; height: 26px; display: block; object-fit: contain; }
         .social-box:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08); }
-        
-        /* ضبط وتنسيق هوية الألوان الرسمية الفخمة للأيقونات */
-        .ic-phone { color: #1e3a8a; } 
-        .ic-email { color: #dc2626; } 
-        .ic-whatsapp { color: #16a34a; }
-        
-        /* تصميم أيقونة السناب شات الاحترافية المدمجة بالكامل بالخلفية الصفراء والشبح الأبيض ذو الظلال العميقة المحددة */
-        .snap-btn { background-color: #fffc00 !important; border: 1px solid #eab308; }
-        .ic-snapchat { color: #ffffff !important; filter: drop-shadow(1px 0px 0px #000) drop-shadow(-1px 0px 0px #000) drop-shadow(0px 1px 0px #000) drop-shadow(0px -1px 0px #000); }
-        
-        .ic-youtube { color: #cc0000; } 
-        .ic-facebook { color: #2563eb; } 
-        .ic-instagram { color: #e1306c; }
-        .ic-tiktok { color: #000000; } 
-        .ic-x { color: #0f172a; } 
-        .ic-threads { color: #1e293b; } 
-        .ic-linkedin { color: #0284c7; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول: الصورة الشخصية والاسم -->
+    <!-- المستطيل الأول: الصورة والاسم -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
             <img src="me.jpg" alt="Abdullah Mofid Yabraq">
@@ -77,25 +61,55 @@
         <h1>Abdullah Mofid Yabraq</h1>
     </div>
 
-    <!-- المستطيل الثاني: المسمى الوظيفي -->
+    <!-- المستطيل الثاني: المهنة -->
     <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث: شبكة التطبيقات الرسمية الفاخرة بدون أي فراغات ومصلحة 100% -->
+    <!-- المستطيل الثالث: شبكة التطبيقات مصلحة وثابتة 100% باستخدام الروابط المباشرة الدائمة للأيقونات -->
     <div class="grid-card all-links-grid">
-        <a href="tel:+966559893115" class="social-box"><i class="fa-solid fa-phone ic-phone"></i></a>
-        <a href="mailto:aboodbrq@gmail.com" class="social-box"><i class="fa-solid fa-envelope ic-email"></i></a>
-        <a href="https://wa.me" target="_blank" class="social-box"><i class="fa-brands fa-whatsapp ic-whatsapp"></i></a>
-        
-        <!-- زر السناب شات الرسمي والمضمون بالكامل لإنهاء العطل نهائياً -->
-        <a href="https://snapchat.com" target="_blank" class="social-box snap-btn"><i class="fa-brands fa-snapchat ic-snapchat"></i></a>
-        
-        <a href="https://youtube.com" target="_blank" class="social-box"><i class="fa-brands fa-youtube ic-youtube"></i></a>
-        <a href="https://facebook.com" target="_blank" class="social-box"><i class="fa-brands fa-facebook-f ic-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" class="social-box"><i class="fa-brands fa-instagram ic-instagram"></i></a>
-        <a href="https://tiktok.com" target="_blank" class="social-box"><i class="fa-brands fa-tiktok ic-tiktok"></i></a>
-        <a href="https://x.com" target="_blank" class="social-box"><i class="fa-brands fa-x-twitter ic-x"></i></a>
-        <a href="https://threads.net" target="_blank" class="social-box"><i class="fa-brands fa-threads ic-threads"></i></a>
-        <a href="https://linkedin.com" target="_blank" class="social-box"><i class="fa-brands fa-linkedin-in ic-linkedin"></i></a>
+        <!-- هاتف -->
+        <a href="tel:+966559893115" class="social-box">
+            <img src="https://iconify.design" alt="Phone">
+        </a>
+        <!-- إيميل -->
+        <a href="mailto:aboodbrq@gmail.com" class="social-box">
+            <img src="https://iconify.design" alt="Email">
+        </a>
+        <!-- واتساب -->
+        <a href="https://wa.me" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="WhatsApp">
+        </a>
+        <!-- سناب شات الأصلي الفخم بالشبح الأبيض والخلفية الصفراء الرسمية المضمون للأبد وبجودة فائقة -->
+        <a href="https://snapchat.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="Snapchat">
+        </a>
+        <!-- يوتيوب -->
+        <a href="https://youtube.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="YouTube">
+        </a>
+        <!-- فيسبوك -->
+        <a href="https://facebook.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="Facebook">
+        </a>
+        <!-- انستغرام -->
+        <a href="https://instagram.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="Instagram">
+        </a>
+        <!-- تيك توك -->
+        <a href="https://tiktok.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="TikTok">
+        </a>
+        <!-- منصة إكس -->
+        <a href="https://x.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="X">
+        </a>
+        <!-- ثريدز -->
+        <a href="https://threads.net" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="Threads">
+        </a>
+        <!-- لينكد إن -->
+        <a href="https://linkedin.com" target="_blank" class="social-box">
+            <img src="https://iconify.design" alt="LinkedIn">
+        </a>
     </div>
 
 </div>
