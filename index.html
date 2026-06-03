@@ -2,8 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>بطاقة تواصل عبدالله</title>
+    <title>Abdullah Mofid Yabraq</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- صورة الموقع (favicon) -->
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/300x300.png?text=Abdullah">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,19 +16,25 @@
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
-            background: #f2f4f8;
+            background: #eef1f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        .card {
+        .container {
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .box {
             background: #ffffff;
-            width: 360px;
-            padding: 24px 24px 28px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             text-align: center;
         }
 
@@ -34,7 +43,7 @@
             height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 16px;
+            margin: 0 auto 14px;
             border: 4px solid #e5e9f0;
         }
 
@@ -45,60 +54,50 @@
         }
 
         .name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 8px;
             color: #222;
         }
 
         .title-badge {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 999px;
             background: #007bff;
             color: #fff;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 18px;
         }
 
         .icons-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin-top: 4px;
+            gap: 16px;
+            margin-top: 10px;
         }
 
         .icon-item {
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #f5f7fb;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            transition: 0.15s ease;
             cursor: pointer;
         }
 
-        /* تحسين الانسيابية البصرية */
         .icon-item i {
-            font-size: 20px;
-            transform: translateY(1px);
-        }
-
-        /* تخصيص أيقونة الهاتف */
-        .phone i {
-            font-size: 21px;
+            font-size: 22px;
         }
 
         .icon-item:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: 0 6px 14px rgba(0,0,0,0.12);
             background: #e8f0ff;
         }
 
-        /* ألوان مخصصة */
         .phone i { color: #34A853; }
         .email i { color: #EA4335; }
         .whatsapp i { color: #25D366; }
@@ -116,72 +115,72 @@
 </head>
 <body>
 
-<div class="card">
-    <div class="avatar">
-        <img src="https://via.placeholder.com/300x300.png?text=Abdullah" alt="Abdullah">
+<div class="container">
+
+    <!-- المستطيل الأول -->
+    <div class="box">
+        <div class="avatar">
+            <img src="https://via.placeholder.com/300x300.png?text=Abdullah" alt="Abdullah">
+        </div>
+        <div class="name">Abdullah Mofid Yabraq</div>
     </div>
 
-    <div class="name">Abdullah Mofid Yabraq</div>
-    <div class="title-badge">CEO Manager</div>
-
-    <div class="icons-grid">
-
-        <!-- 1. الهاتف (اتجاه صحيح) -->
-        <a class="icon-item phone" href="tel:+9665XXXXXXXX">
-            <i class="fa-solid fa-phone"></i>
-        </a>
-
-        <!-- 2. البريد الإلكتروني -->
-        <a class="icon-item email" href="mailto:example@email.com">
-            <i class="fas fa-envelope"></i>
-        </a>
-
-        <!-- 3. واتساب -->
-        <a class="icon-item whatsapp" href="https://wa.me/9665XXXXXXXX" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <!-- 4. سناب شات -->
-        <a class="icon-item snapchat" href="https://www.snapchat.com/add/USERNAME" target="_blank">
-            <i class="fab fa-snapchat-ghost"></i>
-        </a>
-
-        <!-- 5. يوتيوب -->
-        <a class="icon-item youtube" href="https://www.youtube.com/@USERNAME" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
-
-        <!-- 6. فيسبوك -->
-        <a class="icon-item facebook" href="https://www.facebook.com/USERNAME" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <!-- 7. إنستقرام -->
-        <a class="icon-item instagram" href="https://www.instagram.com/USERNAME" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <!-- 8. تيك توك -->
-        <a class="icon-item tiktok" href="https://www.tiktok.com/@USERNAME" target="_blank">
-            <i class="fab fa-tiktok"></i>
-        </a>
-
-        <!-- 9. منصة X -->
-        <a class="icon-item x-twitter" href="https://x.com/USERNAME" target="_blank">
-            <i class="fab fa-x-twitter"></i>
-        </a>
-
-        <!-- 10. ثريدز -->
-        <a class="icon-item threads" href="https://www.threads.net/@USERNAME" target="_blank">
-            <i class="fa-brands fa-threads"></i>
-        </a>
-
-        <!-- 11. لينكدإن -->
-        <a class="icon-item linkedin" href="https://www.linkedin.com/in/USERNAME" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-
+    <!-- المستطيل الثاني -->
+    <div class="box">
+        <div class="title-badge">CEO Manager</div>
     </div>
+
+    <!-- المستطيل الثالث -->
+    <div class="box">
+        <div class="icons-grid">
+
+            <a class="icon-item phone" href="tel:+9665XXXXXXXX">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <a class="icon-item email" href="mailto:example@email.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+            <a class="icon-item whatsapp" href="https://wa.me/9665XXXXXXXX" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a class="icon-item snapchat" href="https://www.snapchat.com/add/USERNAME" target="_blank">
+                <i class="fab fa-snapchat-ghost"></i>
+            </a>
+
+            <a class="icon-item youtube" href="https://www.youtube.com/@USERNAME" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a class="icon-item facebook" href="https://www.facebook.com/USERNAME" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a class="icon-item instagram" href="https://www.instagram.com/USERNAME" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a class="icon-item tiktok" href="https://www.tiktok.com/@USERNAME" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a class="icon-item x-twitter" href="https://x.com/USERNAME" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+
+            <a class="icon-item threads" href="https://www.threads.net/@USERNAME" target="_blank">
+                <i class="fa-brands fa-threads"></i>
+            </a>
+
+            <a class="icon-item linkedin" href="https://www.linkedin.com/in/USERNAME" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+        </div>
+    </div>
+
 </div>
 
 </body>
