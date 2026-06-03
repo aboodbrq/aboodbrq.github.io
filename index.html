@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Mofid Yabraq - CEO Manager</title>
-    <!-- استدعاء خط رسمي وتجهيز الأيقونات المضمونة للعمل على جيت هب -->
-    <link rel="stylesheet" href="https://jsdelivr.net">
     <style>
         :root {
             --sky-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
@@ -35,7 +33,7 @@
         h1 { font-size: 21px; color: var(--text-dark); font-weight: 700; }
         .job-card { text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
         
-        /* تحويل المستطيل الأخير لشبكة ذكية متراصة لتفادي الفراغات الكبيرة */
+        /* شبكة المربعات المتناسقة */
         .all-links-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -44,7 +42,7 @@
             justify-items: center;
         }
         
-        /* تصميم الأزرار المربعة التفاعلية الفخمة */
+        /* تصميم الصناديق التفاعلية وشعارات الـ SVG */
         .social-box { 
             display: flex; align-items: center; justify-content: center; 
             width: 54px; height: 54px; border-radius: 14px; background: #ffffff; 
@@ -52,27 +50,19 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255,255,255,0.8);
         }
-        .social-box i { font-size: 24px; }
+        .social-box svg { width: 24px; height: 24px; display: block; }
         
-        /* تأثيرات الحركة والطفو الاحترافية عند تمرير الماوس */
         .social-box:hover { 
             transform: translateY(-5px) scale(1.08); 
             box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08);
-            background: #ffffff;
         }
-        
-        /* الألوان الرسمية للمنصات */
-        .ic-phone { color: #1e3a8a; } .ic-email { color: #dc2626; } .ic-whatsapp { color: #16a34a; }
-        .ic-snapchat { color: #eab308; } .ic-youtube { color: #cc0000; } .ic-facebook { color: #2563eb; }
-        .ic-instagram { color: #e1306c; } .ic-tiktok { color: #000000; } .ic-x { color: #0f172a; }
-        .ic-threads { color: #1e293b; } .ic-linkedin { color: #0284c7; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- المستطيل الأول: الصورة والاسم -->
+    <!-- المستطيل الأول -->
     <div class="grid-card profile-card">
         <div class="profile-img-wrapper">
             <img src="me.jpg" alt="Abdullah Mofid Yabraq">
@@ -80,22 +70,55 @@
         <h1>Abdullah Mofid Yabraq</h1>
     </div>
 
-    <!-- المستطيل الثاني: المسمى الوظيفي -->
+    <!-- المستطيل الثاني -->
     <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث: شبكة المنصات الذكية الملمومة بدون فراغات زائدة -->
+    <!-- المستطيل الثالث الشامل بالأيقونات المدمجة الملونة المضمونة 100% -->
     <div class="grid-card all-links-grid">
-        <a href="tel:+966559893115" class="social-box"><i class="bi bi-telephone-fill ic-phone"></i></a>
-        <a href="mailto:aboodbrq@gmail.com" class="social-box"><i class="bi bi-envelope-fill ic-email"></i></a>
-        <a href="https://wa.me" target="_blank" class="social-box"><i class="bi bi-whatsapp ic-whatsapp"></i></a>
-        <a href="https://snapchat.com" target="_blank" class="social-box"><i class="bi bi-snapchat ic-snapchat"></i></a>
-        <a href="https://youtube.com" target="_blank" class="social-box"><i class="bi bi-youtube ic-youtube"></i></a>
-        <a href="https://facebook.com" target="_blank" class="social-row social-box"><i class="bi bi-facebook ic-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" class="social-box"><i class="bi bi-instagram ic-instagram"></i></a>
-        <a href="https://tiktok.com" target="_blank" class="social-box"><i class="bi bi-tiktok ic-tiktok"></i></a>
-        <a href="https://x.com" target="_blank" class="social-box"><i class="bi bi-twitter-x ic-x"></i></a>
-        <a href="https://threads.net" target="_blank" class="social-box"><i class="bi bi-threads ic-threads"></i></a>
-        <a href="https://linkedin.com" target="_blank" class="social-box"><i class="bi bi-linkedin ic-linkedin"></i></a>
+        <!-- هاتف -->
+        <a href="tel:+966559893115" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#1e3a8a"><path d="M20.01 15.38c-1.23-.13-2.42-.33-3.57-.7l-2.61 2.61c-2.92-1.48-5.3-3.86-6.78-6.78l2.61-2.61c-.37-1.15-.57-2.34-.7-3.57H3.03c-.02.13-.03.26-.03.4 0 9.39 7.61 17 17 17 .14 0 .27-.01.4-.03v-6.33z"/></svg>
+        </a>
+        <!-- إيميل -->
+        <a href="mailto:aboodbrq@gmail.com" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#dc2626"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <!-- واتساب -->
+        <a href="https://wa.me" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#16a34a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.817 9.817 0 0 0 12.04 2zm5.79 13.1c-.24.68-1.4 1.23-1.93 1.29-.48.06-.97.11-3.08-.73-2.7-1.07-4.42-3.83-4.55-4-.14-.18-1.1-1.47-1.1-2.81 0-1.34.7-1.99.95-2.26.24-.26.54-.33.72-.33.18 0 .36.01.52.02.16.01.38-.06.59.45.22.52.75 1.83.82 1.96.07.13.11.29.02.47-.08.18-.13.29-.26.44-.13.15-.28.34-.4.49-.13.15-.26.31-.11.57.15.26.66 1.09 1.42 1.76.98.86 1.81 1.13 2.07 1.26.26.13.41.11.57-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.26.13.44.2.5.31.07.11.07.64-.17 1.32z"/></svg>
+        </a>
+        <!-- سناب شات -->
+        <a href="https://snapchat.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.2.2.45.3.71.3h13.88c.26 0 .51-.1.71-.3.39-.39.39-1.02 0-1.41l-.62-2.79C20.26 15.07 21 13.12 21 11c0-4.97-4.03-9-9-9zm3 10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+        </a>
+        <!-- يوتيوب -->
+        <a href="https://youtube.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#cc0000"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.503 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.387.508 9.387.508s7.517 0 9.387-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <!-- فيسبوك -->
+        <a href="https://facebook.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#2563eb"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- انستغرام -->
+        <a href="https://instagram.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#e1306c"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <!-- تيك توك -->
+        <a href="https://tiktok.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31.01 2.61-.01 3.91.02.08 1.53.63 3.03 1.6 4.19 1.14.73 2.46 1.11 3.81 1.16v3.91c-1.53-.08-3.03-.64-4.19-1.6-.05 1.77-.01 3.54-.02 5.31-.05 4.74-4.75 8.16-9.35 6.94-3.55-.94-5.69-4.81-4.63-8.29.98-3.23 4.14-5.18 7.37-4.34.01 1.43-.01 2.86 0 4.28-1.74-.43-3.58.46-4.1 2.16-.62 2.02.93 4.12 3.03 4.09 2.15-.03 3.65-2.22 3.37-4.34-.02-4.46.01-8.91-.01-13.37z"/></svg>
+        </a>
+        <!-- منصة إكس -->
+        <a href="https://x.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#0f172a"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <!-- ثريدز -->
+        <a href="https://threads.net" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#1e293b"><path d="M12 24c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm0-22c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zm2.703 13.918c-.808.577-1.785.882-2.703.882-2.653 0-4.715-1.921-4.715-4.757 0-2.846 2.052-4.773 4.715-4.773 2.457 0 4.444 1.706 4.636 4.1h-1.895c-.173-1.393-1.319-2.327-2.741-2.327-1.583 0-2.825 1.151-2.825 3 0 1.839 1.242 2.982 2.825 2.982.529 0 1.077-.168 1.488-.461v-1.636h-1.488v-1.727h3.388v4.912h-.35z"/></svg>
+        </a>
+        <!-- لينكد إن -->
+        <a href="https://linkedin.com" target="_blank" class="social-box">
+            <svg viewBox="0 0 24 24" fill="#0284c7"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9H7.12v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7h-3.56V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/></svg>
+        </a>
     </div>
 
 </div>
