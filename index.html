@@ -32,17 +32,9 @@
         .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
         h1 { font-size: 21px; color: var(--text-dark); font-weight: 700; }
         .job-card { text-align: center; padding: 12px; font-weight: 600; font-size: 14px; color: #0284c7; background: rgba(224, 242, 254, 0.7); }
-        
-        /* شبكة المربعات المتناسقة */
         .all-links-grid { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 16px; 
-            padding: 24px; 
-            justify-items: center;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 24px; justify-items: center;
         }
-        
-        /* تصميم الصناديق التفاعلية وشعارات الـ SVG */
         .social-box { 
             display: flex; align-items: center; justify-content: center; 
             width: 54px; height: 54px; border-radius: 14px; background: #ffffff; 
@@ -51,11 +43,7 @@
             border: 1px solid rgba(255,255,255,0.8);
         }
         .social-box svg { width: 24px; height: 24px; display: block; }
-        
-        .social-box:hover { 
-            transform: translateY(-5px) scale(1.08); 
-            box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08);
-        }
+        .social-box:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.08); }
     </style>
 </head>
 <body>
@@ -73,7 +61,7 @@
     <!-- المستطيل الثاني -->
     <div class="grid-card job-card">CEO Manager</div>
 
-    <!-- المستطيل الثالث الشامل بالأيقونات المدمجة الملونة المضمونة 100% -->
+    <!-- المستطيل الثالث الشامل بالأيقونات الفاخرة والمحدثة بالكامل -->
     <div class="grid-card all-links-grid">
         <!-- هاتف -->
         <a href="tel:+966559893115" class="social-box">
@@ -87,9 +75,11 @@
         <a href="https://wa.me" target="_blank" class="social-box">
             <svg viewBox="0 0 24 24" fill="#16a34a"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.817 9.817 0 0 0 12.04 2zm5.79 13.1c-.24.68-1.4 1.23-1.93 1.29-.48.06-.97.11-3.08-.73-2.7-1.07-4.42-3.83-4.55-4-.14-.18-1.1-1.47-1.1-2.81 0-1.34.7-1.99.95-2.26.24-.26.54-.33.72-.33.18 0 .36.01.52.02.16.01.38-.06.59.45.22.52.75 1.83.82 1.96.07.13.11.29.02.47-.08.18-.13.29-.26.44-.13.15-.28.34-.4.49-.13.15-.26.31-.11.57.15.26.66 1.09 1.42 1.76.98.86 1.81 1.13 2.07 1.26.26.13.41.11.57-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.26.13.44.2.5.31.07.11.07.64-.17 1.32z"/></svg>
         </a>
-        <!-- سناب شات -->
-        <a href="https://snapchat.com" target="_blank" class="social-box">
-            <svg viewBox="0 0 24 24" fill="#eab308"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.2.2.45.3.71.3h13.88c.26 0 .51-.1.71-.3.39-.39.39-1.02 0-1.41l-.62-2.79C20.26 15.07 21 13.12 21 11c0-4.97-4.03-9-9-9zm3 10c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+        <!-- تم تحديث ورسم أيقونة شبح السناب شات الرسمية والبديلة هنا بالكامل وبدقة عالية -->
+        <a href="https://snapchat.com" target="_blank" class="social-box" style="background-color: #fffc00;">
+            <svg viewBox="0 0 24 24">
+                <path fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-linejoin="round" d="M12 3.8c1.9 0 3.5 1.4 3.5 3.5 0 .3 0 .8-.1 1.2.8.2 1.5.7 1.5 1.6 0 .7-.4 1.2-1.1 1.4.1.3.2.5.2.8 0 1.8-1.8 3-3.9 3s-3.9-1.2-3.9-3c0-.3.1-.5.2-.8-.7-.2-1.1-.7-1.1-1.4 0-.9.7-1.4 1.5-1.6 0-.4-.1-.9-.1-1.2 0-2.1 1.6-3.5 3.5-3.5zm-3.9 11.4c-.5 0-.9-.1-1.2-.3-.3-.2-.4-.4-.3-.7s.4-.5 1-.7c.2.4.5.8.8 1.1 0 .2-.1.4-.3.6zm7.8 0c-.2-.2-.3-.4-.3-.6.3-.3.6-.7.8-1.1.6.2.9.5 1 .7 0 .3-.1.5-.3.7-.3.2-.7.3-1.2.3z"/>
+            </svg>
         </a>
         <!-- يوتيوب -->
         <a href="https://youtube.com" target="_blank" class="social-box">
