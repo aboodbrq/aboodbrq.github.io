@@ -97,6 +97,72 @@
             backdrop-filter: blur(4px);
         }
 
+        /* الشركات داخل مستطيل المهنة */
+        .companies {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .company-card {
+            background: rgba(255, 255, 255, 0.45);
+            border-radius: 14px;
+            padding: 14px 16px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.4);
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+        .company-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+        .company-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .company-icons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .company-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .company-icon i {
+            font-size: 18px;
+        }
+
+        .company-icon:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+        .company-icon.phone i { color: #34A853; }
+        .company-icon.email i { color: #EA4335; }
+        .company-icon.whatsapp i { color: #25D366; }
+        .company-icon.location i { color: #d9534f; }
+
         .icons-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -119,11 +185,9 @@
             transition: 0.2s ease;
             cursor: pointer;
 
-            /* إزالة الخطوط نهائياً */
             text-decoration: none !important;
         }
 
-        /* إزالة الخطوط من كل الحالات */
         .icon-item,
         .icon-item i,
         .icon-item:link,
@@ -137,14 +201,13 @@
             font-size: 22px;
         }
 
-        /* حركة عند تمرير الماوس */
         .icon-item:hover {
             transform: translateY(-6px) scale(1.07);
             background: rgba(255, 255, 255, 0.75);
             box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
 
-        /* ألوان الأيقونات */
+        /* ألوان الأيقونات الشخصية */
         .phone i { color: #34A853; }
         .email i { color: #EA4335; }
         .whatsapp i { color: #25D366; }
@@ -156,25 +219,6 @@
         .x-twitter i { color: #000000; }
         .threads i { color: #000000; }
         .linkedin i { color: #0A66C2; }
-
-        /* زر حفظ جهة الاتصال */
-        .vcf-btn {
-            margin-top: 18px;
-            padding: 10px 18px;
-            background: #007bff;
-            color: white;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            display: inline-block;
-            text-decoration: none !important;
-            transition: 0.2s ease;
-        }
-
-        .vcf-btn:hover {
-            background: #005fcc;
-            transform: scale(1.05);
-        }
 
         /* QR Code */
         .qr-box {
@@ -202,9 +246,73 @@
         <div class="name">Abdullah Mofid Yabraq</div>
     </div>
 
-    <!-- المستطيل الثاني -->
+    <!-- المستطيل الثاني (المهنة + الشركات) -->
     <div class="box">
         <div class="title-badge">CEO Manager</div>
+
+        <div class="companies">
+
+            <div class="company-card">
+                <div class="company-name">شركة بيت النخبة للاستثمار</div>
+                <div class="company-icons">
+                    <a href="tel:+966532635000" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:bayt.alnukhba@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966532635000" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/TH9c6Zk8GZiKaSJVA" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+            <div class="company-card">
+                <div class="company-name">شركة هدى الجزيرة العقارية</div>
+                <div class="company-icons">
+                    <a href="tel:+966532635000" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:huda.aljazera@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966532635000" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/TH9c6Zk8GZiKaSJVA" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+            <div class="company-card">
+                <div class="company-name">شركة رتقا للتجارة</div>
+                <div class="company-icons">
+                    <a href="tel:+966548559944" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:ritqata@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966548559944" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/V7qyeVgzU7gazNj58" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+            <div class="company-card">
+                <div class="company-name">شركة مزخرف للصناعة</div>
+                <div class="company-icons">
+                    <a href="tel:+966570097200" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:mozakhref@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966570097200" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/zGxgfizgShxY98FD7" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+            <div class="company-card">
+                <div class="company-name">شركة الليوان الخليجية المحدودة</div>
+                <div class="company-icons">
+                    <a href="tel:+966550721888" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:liwankhco@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966550721888" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/3B1U6dk5dSy2ihWv9" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+            <div class="company-card">
+                <div class="company-name">شركة عزيمة التعليمية</div>
+                <div class="company-icons">
+                    <a href="tel:+966507021281" class="company-icon phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:azeemahkindergarten@gmail.com" class="company-icon email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/966507021281" target="_blank" class="company-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/HELURSfY6raW2Wqn8" target="_blank" class="company-icon location"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- المستطيل الثالث -->
@@ -256,9 +364,6 @@
             </a>
 
         </div>
-
-        <!-- زر حفظ جهة الاتصال -->
-        <a class="vcf-btn" href="contact.vcf" download>Save Contact</a>
 
         <!-- QR Code -->
         <div class="qr-box">
