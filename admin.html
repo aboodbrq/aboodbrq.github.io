@@ -2,25 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>لوحة التحكم</title>
+<title>لوحة التحكم — عبدالله مفيد يبرق</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Firebase v8 -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAZg3k6l1HE-uMDVIzorSo4mTm6P2Is1MY",
-    authDomain: "abdullah-profile-9e0e6.firebaseapp.com",
-    projectId: "abdullah-profile-9e0e6"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-</script>
+<script src="firebase.js"></script>
 
 <style>
 body {
@@ -28,12 +13,14 @@ body {
     background: #f2f4f7;
     padding: 20px;
 }
+h2 { margin-top: 20px; }
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 6px 0;
     border-radius: 8px;
     border: 1px solid #ccc;
+    font-size: 0.9rem;
 }
 button {
     padding: 10px 20px;
@@ -43,6 +30,10 @@ button {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 0.9rem;
+}
+button.secondary {
+    background: #6c757d;
 }
 #adminPanel { display: none; }
 .company-card {
@@ -52,12 +43,21 @@ button {
     margin-top: 10px;
     border: 1px solid #ddd;
 }
+.company-card strong { display:block; margin-bottom:6px; }
+.top-bar{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;
+}
 </style>
 </head>
 
 <body>
 
-<h2>تسجيل الدخول</h2>
+<div class="top-bar">
+  <h2>لوحة التحكم</h2>
+  <button class="secondary" onclick="location.href='index.html'">العودة للموقع</button>
+</div>
+
+<h3>تسجيل الدخول</h3>
 <div id="loginBox">
     <input id="email" placeholder="البريد">
     <input id="password" type="password" placeholder="كلمة المرور">
@@ -66,31 +66,31 @@ button {
 
 <div id="adminPanel">
 
-<h2>بياناتي الشخصية</h2>
+<h3>بياناتي الشخصية</h3>
 
 <input id="name" placeholder="الاسم">
 <input id="title" placeholder="المسمى الوظيفي">
 <input id="phone" placeholder="رقم الجوال">
 <input id="email2" placeholder="البريد">
-<input id="whatsapp" placeholder="واتساب">
+<input id="whatsapp" placeholder="واتساب (بدون +966)">
 <input id="snapchat" placeholder="سناب">
 <input id="youtube" placeholder="يوتيوب">
 <input id="instagram" placeholder="إنستغرام">
 <input id="linkedin" placeholder="لينكدإن">
-<input id="qr" placeholder="رابط QR">
+<input id="qr" placeholder="رابط صورة QR">
 
 <button onclick="saveProfile()">حفظ البيانات</button>
 
 <hr>
 
-<h2>إضافة شركة جديدة</h2>
+<h3>إضافة شركة جديدة</h3>
 
 <input id="c_name" placeholder="اسم الشركة">
 <textarea id="c_desc" placeholder="وصف الشركة"></textarea>
 
 <input id="c_phone" placeholder="رقم الجوال">
 <input id="c_email" placeholder="البريد">
-<input id="c_whatsapp" placeholder="واتساب">
+<input id="c_whatsapp" placeholder="واتساب (بدون +966)">
 <input id="c_location" placeholder="رابط الموقع على الخريطة">
 
 <input id="c_instagram" placeholder="إنستغرام">
@@ -100,7 +100,7 @@ button {
 
 <button onclick="addCompany()">إضافة الشركة</button>
 
-<h2>الشركات الحالية</h2>
+<h3>الشركات الحالية</h3>
 <div id="companiesList"></div>
 
 </div>
@@ -114,11 +114,29 @@ function login() {
     .then(() => {
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("adminPanel").style.display = "block";
+        loadProfile();
         loadCompanies();
     })
     .catch((err) => {
         alert("خطأ في تسجيل الدخول");
         console.log(err);
+    });
+}
+
+function loadProfile() {
+    db.collection("settings").doc("profile").get().then(doc => {
+        if (!doc.exists) return;
+        const p = doc.data();
+        name.value      = p.name      || "";
+        title.value     = p.title     || "";
+        phone.value     = p.phone     || "";
+        email2.value    = p.email     || "";
+        whatsapp.value  = p.whatsapp  || "";
+        snapchat.value  = p.snapchat  || "";
+        youtube.value   = p.youtube   || "";
+        instagram.value = p.instagram || "";
+        linkedin.value  = p.linkedin  || "";
+        qr.value        = p.qr        || "";
     });
 }
 
@@ -151,8 +169,22 @@ function addCompany() {
         linkedin: c_linkedin.value
     }).then(() => {
         alert("تمت إضافة الشركة");
+        clearCompanyForm();
         loadCompanies();
     });
+}
+
+function clearCompanyForm() {
+    c_name.value = "";
+    c_desc.value = "";
+    c_phone.value = "";
+    c_email.value = "";
+    c_whatsapp.value = "";
+    c_location.value = "";
+    c_instagram.value = "";
+    c_twitter.value = "";
+    c_facebook.value = "";
+    c_linkedin.value = "";
 }
 
 function loadCompanies() {
@@ -163,8 +195,8 @@ function loadCompanies() {
             const card = document.createElement("div");
             card.className = "company-card";
             card.innerHTML = `
-                <strong>${c.name}</strong><br>
-                ${c.desc}<br><br>
+                <strong>${c.name || "شركة بدون اسم"}</strong>
+                <div>${c.desc || ""}</div>
                 <button onclick="deleteCompany('${doc.id}')">حذف</button>
             `;
             companiesList.appendChild(card);
@@ -173,6 +205,7 @@ function loadCompanies() {
 }
 
 function deleteCompany(id) {
+    if (!confirm("هل تريد حذف هذه الشركة؟")) return;
     db.collection("companies").doc(id).delete().then(() => {
         alert("تم حذف الشركة");
         loadCompanies();
